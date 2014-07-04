@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+	<Graphite>
+		<CarbonServer><%= @server %></CarbonServer>
+		<CarbonServerPort><%= @port %></CarbonServerPort>
+		<MetricPath><%= @metric_path %></MetricPath>
+		<MetricSendIntervalSeconds><%= @metric_send_interval %></MetricSendIntervalSeconds>
+		<TimeZoneOfGraphiteServer><%= @timezone %></TimeZoneOfGraphiteServer>
+	</Graphite>
+	<PerformanceCounters>
+<% if !@performance_counters.nil?
+     @performance_counters.each do |counter| %>
+  <Counter Name="<%= counter %>"/>
+<%   end
+   end
+%>
+	</PerformanceCounters>
+	<Filtering>
+<% if !@metric_filters.nil?
+     @metric_filters.each do |filter| %>
+    <MetricFilter Name="<%= filter %>"/>
+<%   end
+   end
+%>
+	</Filtering>
+	<Logging>
+		<VerboseOutput><%= @verbose_logging %></VerboseOutput>
+	</Logging>
+</Configuration>
