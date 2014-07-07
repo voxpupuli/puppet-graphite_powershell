@@ -39,7 +39,7 @@ Install with defaults:
 Install and just send network counters:
 
 ```puppet
-  class { 'puppetversion':
+  class { 'graphite_powershell':
     server               => 'graphite.mycorp.com',
     performance_counters => [
       '\Network Interface(*)\Bytes Received/sec',
@@ -50,10 +50,41 @@ Install and just send network counters:
       '\Network Interface(*)\Packets Sent Non-Unicast/sec',
     ]
   }
-```
+
 ##Usage
 
-Put the classes, types, and resources for customizing, configuring, and doing the fancy stuff with your module here.
+Using the graphite_powershell module consists predominantly of defining performance counters and filters.
+
+
+```puppet
+  class { 'graphite_powershell':
+    server => undef,
+    install_url => 'https://raw.githubusercontent.com/MattHodge/Graphite-PowerShell-Functions/master/Graphite-PowerShell.ps1',
+    install_dir => 'C:/GraphitePowershell',
+    port => '2003',
+    metric_path => 'performance.windows',
+    metric_send_interval => '10',
+    timezone => 'UTC',
+    performance_counters => [
+      '\Network Interface(*)\Bytes Received/sec',
+      '\Network Interface(*)\Bytes Sent/sec',
+      '\Network Interface(*)\Packets Received Unicast/sec',
+      '\Network Interface(*)\Packets Sent Unicast/sec',
+      '\Network Interface(*)\Packets Received Non-Unicast/sec',
+      '\Network Interface(*)\Packets Sent Non-Unicast/sec',
+      '\Processor(_Total)\% Processor Time',
+      '\Memory\Available MBytes',
+      '\Memory\Pages/sec',
+      '\Memory\Pages Input/sec',
+      '\System\Processor Queue Length',
+      '\System\Threads',
+      '\PhysicalDisk(*)\Avg. Disk Write Queue Length',
+      '\PhysicalDisk(*)\Avg. Disk Read Queue Length'
+    ],
+    metric_filters => [ 'isatap', 'teredo tunneling' ],
+    verbose_logging => true
+  }
+```
 
 ##Reference
 
@@ -81,7 +112,7 @@ This project contains tests for both [rspec-puppet](http://rspec-puppet.com/) an
 
 Quickstart:
 
-    gem install bundler
-    bundle install
-    bundle exec rake spec
+  gem install bundler
+  bundle install
+  bundle exec rake spec
 	BEAKER_DEBUG=yes bundle exec rspec spec/acceptance

@@ -7,3 +7,4 @@ description   'Installs a windows service that reports system metrics to graphit
 project_page  'https://github.com/opentable/puppet-graphite_powershell'
 license       'MIT'
 dependency    'puppetlabs/stdlib'
+dependency    'opentable/nssm'

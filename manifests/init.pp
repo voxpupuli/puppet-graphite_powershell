@@ -4,9 +4,6 @@
 #
 # === Parameters
 #
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
-#
 class graphite_powershell (
   $server,
   $install_url          = $graphite_powershell::params::install_url,
@@ -37,6 +34,7 @@ class graphite_powershell (
 
   anchor { 'graphite_powershell::begin': } ->
   class { 'graphite_powershell::config': } ->
+  class { 'nssm': } ->
   class { 'graphite_powershell::install': } ->
   class { 'graphite_powershell::service': } ->
   anchor { 'graphite_powershell::end': }

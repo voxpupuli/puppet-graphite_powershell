@@ -1,8 +1,8 @@
 # == Class graphite_powershell::install
 #
+# This class is meant to be called from graphite_powershell
+#
 class graphite_powershell::install {
-
-  #TODO: require nssm
 
   download_file { 'graphite_ps-install':
     url                    => $graphite_powershell::install_url,

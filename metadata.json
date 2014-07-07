@@ -1,9 +1,6 @@
 {
   "operatingsystem_support": [
-      { "operatingsystem": "RedHat" },
-      { "operatingsystem": "CentOS" },
-      { "operatingsystem": "Debian" },
-      { "operatingsystem": "Ubuntu" }
+      { "operatingsystem": "windows" },
   ],
   "requirements": [
     {
@@ -27,6 +24,10 @@
     {
 	    "name": "puppetlabs/stdlib",
 	    "version_requirement": ">= 3.0.0"
-	  }
+	  },
+    {
+      "name": "opentable/nssm",
+      "version_requirement": ">= 0.1.0"
+    }
   ]
 }
