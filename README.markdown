@@ -31,7 +31,7 @@ Installs a windows service that reports system metrics to graphite
 Install with defaults:
 
 ```puppet
-  class { 'puppetversion':
+  class { 'graphite_powershell':
     server => 'graphite.mycorp.com'
   }
 ```
