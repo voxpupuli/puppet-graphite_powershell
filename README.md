@@ -52,6 +52,7 @@ Install and just send network counters:
       '\Network Interface(*)\Packets Sent Non-Unicast/sec',
     ]
   }
+```
 
 ##Usage
 
