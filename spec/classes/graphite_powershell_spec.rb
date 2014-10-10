@@ -8,14 +8,12 @@ describe 'graphite_powershell' do
           :server => 'localhost'
         }}
         let(:facts) {{
-          :osfamily => osfamily,
+          :osfamily     => osfamily,
+          :architecture => 'amd64'
         }}
 
-        #it { should compile.with_all_deps }
-
         it { should contain_class('graphite_powershell::params') }
-        it { should contain_class('nssm') }
-        it { should contain_class('graphite_powershell::config').that_comes_before('nssm') }
+        it { should contain_class('graphite_powershell::config').that_comes_before('graphite_powershell::install') }
         it { should contain_class('graphite_powershell::install').that_comes_before('graphite_powershell::service') }
         it { should contain_class('graphite_powershell::service') }
 
@@ -37,6 +35,7 @@ describe 'graphite_powershell' do
       let(:facts) {{
         :osfamily        => 'Debian',
         :operatingsystem => 'Ubuntu',
+        :architecture    => 'amd64'
       }}
 
       it { expect { should contain_file('C:/GraphitePowershell/StatsToGraphiteConfig.xml') }.to raise_error(Puppet::Error, /Debian not supported/) }

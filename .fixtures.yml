@@ -2,6 +2,5 @@ fixtures:
   repositories:
     stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
     download_file: "https://github.com/opentable/puppet-download_file.git"
-    nssm: "https://github.com/opentable/puppet-nssm.git"
   symlinks:
     graphite_powershell: "#{source_dir}"
