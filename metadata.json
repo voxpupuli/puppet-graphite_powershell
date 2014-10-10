@@ -1,6 +1,6 @@
 {
   "name":          "opentable-graphite_powershell",
-  "version":       "0.1.0",
+  "version":       "1.0.0",
   "author":        "opentable",
   "license":       "MIT",
   "summary":       "Module to send system metrics to graphite from windows",
