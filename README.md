@@ -15,6 +15,8 @@
 
 Module to send metrics to graphite from windows
 
+[![Build Status](https://travis-ci.org/opentable/puppet-graphite_powershell.png?branch=master)](https://travis-ci.org/opentable/puppet-graphite_powershell)
+
 ##Module Description
 
 Installs a windows service that reports system metrics to graphite
