@@ -1,33 +1,27 @@
 {
-  "operatingsystem_support": [
-      { "operatingsystem": "windows" }
-  ],
-  "requirements": [
-    {
-      "name": "pe",
-      "version_requirement": "3.2.x"
-    },
-    {
-      "name": "puppet",
-      "version_requirement": "3.x"
-    }
-  ],
   "name":          "opentable-graphite_powershell",
   "version":       "0.1.0",
-  "source":        "git://github.com/opentable/puppet-graphite_powershell",
   "author":        "opentable",
-  "summary":       "Module to send metrics to graphite from windows",
-  "description":   "Installs a windows service that reports system metrics to graphite",
-  "project_page":  "https://github.com/opentable/puppet-graphite_powershell",
   "license":       "MIT",
+  "summary":       "Module to send system metrics to graphite from windows",
+  "source":        "https://github.com/opentable/puppet-graphite_powershell",
+  "project_page":  "https://github.com/opentable/puppet-graphite_powershell",
+  "issues_url":   "https://github.com/opentable/puppet-graphite_powershell/issues",
+  "tags": ["windows", "graphite", "powershell"],
+  "operatingsystem_support": [
+    {
+    "operatingsystem":"Windows",
+    "operatingsystemrelease":[ "2008R2", "2012", "2012R2" ]
+    }
+  ],
   "dependencies": [
     {
 	    "name": "puppetlabs/stdlib",
-	    "version_requirement": ">= 3.0.0"
+	    "version_requirement": ">= 3.0.0 <5.0.0"
 	  },
     {
-      "name": "opentable/nssm",
-      "version_requirement": ">= 0.1.0"
+      "name": "opentable/download_file",
+      "version_requirement": ">= 0.0.1 <1.0.0"
     }
   ]
 }

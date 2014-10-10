@@ -53,38 +53,43 @@ Install and just send network counters:
 
 ##Usage
 
-Using the graphite_powershell module consists predominantly of defining performance counters and filters.
+##Usage
 
+###Classes and Defined Types
 
-```puppet
-  class { 'graphite_powershell':
-    server => undef,
-    install_url => 'https://raw.githubusercontent.com/MattHodge/Graphite-PowerShell-Functions/master/Graphite-PowerShell.ps1',
-    install_dir => 'C:/GraphitePowershell',
-    port => '2003',
-    metric_path => 'performance.windows',
-    metric_send_interval => '10',
-    timezone => 'UTC',
-    performance_counters => [
-      '\Network Interface(*)\Bytes Received/sec',
-      '\Network Interface(*)\Bytes Sent/sec',
-      '\Network Interface(*)\Packets Received Unicast/sec',
-      '\Network Interface(*)\Packets Sent Unicast/sec',
-      '\Network Interface(*)\Packets Received Non-Unicast/sec',
-      '\Network Interface(*)\Packets Sent Non-Unicast/sec',
-      '\Processor(_Total)\% Processor Time',
-      '\Memory\Available MBytes',
-      '\Memory\Pages/sec',
-      '\Memory\Pages Input/sec',
-      '\System\Processor Queue Length',
-      '\System\Threads',
-      '\PhysicalDisk(*)\Avg. Disk Write Queue Length',
-      '\PhysicalDisk(*)\Avg. Disk Read Queue Length'
-    ],
-    metric_filters => [ 'isatap', 'teredo tunneling' ],
-    verbose_logging => true
-  }
-```
+####Class: `graphite_powershell`
+
+**Parameters within `graphite_powersehll`:**
+
+#####`server`
+The graphite server in which to send the configured metrics
+
+#####`install_url`
+The url from which to download the graphite powershell script
+
+#####`install_dir`
+The location in which to install the graphite powershell script
+
+#####`port`
+The port that the graphite server is running on.
+
+#####`metric_path`
+The graphite namespece in which the stats will be sent to
+
+#####`metric_send_interval`
+The time inveral (in seconds) in which to send metrics to the graphite server
+
+#####`timezone`
+The timezone of your graphite server.
+
+#####`performance_counters`
+A list of the performance counters that you want to be sent to graphite.
+
+#####`metric_filters`
+A list of names you want to filter out of the performance counter list
+
+#####`verbose_logging`
+If enabled, will log each of the metrics that were sent to the graphite server.
 
 ##Reference
 
@@ -96,23 +101,13 @@ Using the graphite_powershell module consists predominantly of defining performa
 
 This module is tested on the following platforms:
 
+* Windows 2008
 * Windows 2008 R2
+* Windows 2012
+* Windows 2012 R2
 
 It is tested with the OSS version of Puppet only.
-
-##Development
 
 ###Contributing
 
 Please read CONTRIBUTING.md for full details on contributing to this project.
-
-###Running tests
-
-This project contains tests for both [rspec-puppet](http://rspec-puppet.com/) and [beaker](https://github.com/puppetlabs/beaker) to verify functionality. For in-depth information please see their respective documentation.
-
-Quickstart:
-
-  gem install bundler
-  bundle install
-  bundle exec rake spec
-	BEAKER_DEBUG=yes bundle exec rspec spec/acceptance
