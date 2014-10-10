@@ -10,8 +10,8 @@
 class graphite_powershell::install {
 
   download_file { 'graphite_ps-install':
-    url                    => $graphite_powershell::install_url,
-    destination_directory  => $graphite_powershell::install_dir
+    url                   => $graphite_powershell::install_url,
+    destination_directory => $graphite_powershell::install_dir
   }
 
   file { "${graphite_powershell::install_dir}/Graphite-PowerShell.ps1":
