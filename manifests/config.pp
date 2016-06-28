@@ -1,7 +1,3 @@
-# Author::    Liam Bennett (mailto:lbennett@opentable.com)
-# Copyright:: Copyright (c) 2013 OpenTable Inc
-# License::   MIT
-
 # == Class graphite_powershell::config
 #
 # This private class is called from `graphite_powershell`
