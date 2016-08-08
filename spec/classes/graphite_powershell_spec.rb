@@ -13,8 +13,8 @@ describe 'graphite_powershell' do
         }}
 
         it { should contain_class('graphite_powershell::params') }
-        it { should contain_class('graphite_powershell::config').that_comes_before('graphite_powershell::install') }
-        it { should contain_class('graphite_powershell::install').that_comes_before('graphite_powershell::service') }
+        it { should contain_class('graphite_powershell::config').that_comes_before('Class[graphite_powershell::install]') }
+        it { should contain_class('graphite_powershell::install').that_comes_before('Class[graphite_powershell::service]') }
         it { should contain_class('graphite_powershell::service') }
 
         it { should contain_service('GraphitePowerShell').that_subscribes_to('File[C:/GraphitePowershell/StatsToGraphiteConfig.xml]') }
