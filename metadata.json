@@ -2,7 +2,7 @@
   "name":          "puppet-graphite_powershell",
   "version":       "1.0.1",
   "author":        "puppet-community",
-  "license":       "Apache 2.0",
+  "license":       "Apache-2.0",
   "summary":       "Module to send system metrics to graphite from windows",
   "source":        "https://github.com/puppet-community/puppet-graphite_powershell",
   "project_page":  "https://github.com/puppet-community/puppet-graphite_powershell",
