@@ -11,6 +11,6 @@ class graphite_powershell::service {
 
   service { 'GraphitePowerShell':
     ensure => running,
-    enable => true
+    enable => true,
   }
 }
