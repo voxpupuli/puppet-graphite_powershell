@@ -22,7 +22,6 @@ describe 'graphite_powershell' do
         it { should contain_file('C:/GraphitePowershell/Graphite-PowerShell.ps1').with_ensure('present') }
 
         it { should contain_file('C:/GraphitePowershell/StatsToGraphiteConfig.xml').with_ensure('present') }
-
       end
     end
   end
