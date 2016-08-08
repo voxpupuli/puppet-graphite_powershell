@@ -33,7 +33,7 @@ class graphite_powershell::params {
     '\System\Processor Queue Length',
     '\System\Threads',
     '\PhysicalDisk(*)\Avg. Disk Write Queue Length',
-    '\PhysicalDisk(*)\Avg. Disk Read Queue Length'
+    '\PhysicalDisk(*)\Avg. Disk Read Queue Length',
   ]
 
   $metric_filters = [ 'isatap', 'teredo tunneling' ]
