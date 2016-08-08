@@ -37,7 +37,7 @@ describe 'graphite_powershell' do
         architecture: 'amd64'
       }}
 
-      it { expect { should contain_file('C:/GraphitePowershell/StatsToGraphiteConfig.xml') }.to raise_error(Puppet::Error, /Debian not supported/) }
+      it { expect { should contain_file('C:/GraphitePowershell/StatsToGraphiteConfig.xml') }.to raise_error(Puppet::Error, %r{Debian not supported}) }
     end
   end
 end
