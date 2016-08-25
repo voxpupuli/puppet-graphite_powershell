@@ -1,17 +1,26 @@
 {
-  "name":          "puppet-graphite_powershell",
-  "version":       "2.0.0",
-  "author":        "Vox Pupuli",
-  "license":       "MIT",
-  "summary":       "Module to send system metrics to graphite from windows",
-  "source":        "https://github.com/voxpupuli/puppet-graphite_powershell.git",
-  "project_page":  "https://github.com/voxpupuli/puppet-graphite_powershell",
-  "issues_url":   "https://github.com/voxpupuli/puppet-graphite_powershell/issues",
-  "tags": ["windows", "graphite", "powershell"],
+  "name": "puppet-graphite_powershell",
+  "version": "2.0.1-rc0",
+  "author": "Vox Pupuli",
+  "license": "MIT",
+  "summary": "Module to send system metrics to graphite from windows",
+  "source": "https://github.com/voxpupuli/puppet-graphite_powershell.git",
+  "project_page": "https://github.com/voxpupuli/puppet-graphite_powershell",
+  "issues_url": "https://github.com/voxpupuli/puppet-graphite_powershell/issues",
+  "tags": [
+    "windows",
+    "graphite",
+    "powershell"
+  ],
   "operatingsystem_support": [
     {
-    "operatingsystem":"Windows",
-    "operatingsystemrelease":[ "2008", "2008 R2", "2012", "2012 R2" ]
+      "operatingsystem": "Windows",
+      "operatingsystemrelease": [
+        "2008",
+        "2008 R2",
+        "2012",
+        "2012 R2"
+      ]
     }
   ],
   "dependencies": [
