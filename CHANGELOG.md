@@ -1,3 +1,7 @@
+## 2016-08-30 - Release 2.0.1
+
+* Deploy to the forge (last release didn't work)
+
 ## 2016-08-19 - Release 2.0.0
 
 * Drop of ruby1.8.7

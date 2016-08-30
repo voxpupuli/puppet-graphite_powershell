@@ -26,7 +26,7 @@ matrix:
   - rvm: 2.2
     env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
   - rvm: 2.3.1
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=build
+    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=build DEPLOY_TO_FORGE=yes
   - rvm: 2.3.1
     env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=rubocop
   - rvm: 2.3.1
@@ -43,10 +43,10 @@ deploy:
     branch: ha-bug-puppet-forge
   user: puppet
   password:
-    secure: ""
+    secure: "kgLMkE7MzGeJMGNvKPqK9xIwVvZN67/FojIaIUVAGawtZ2qNpzbMv/cA905fLojZ9pJ4t+A/l7lfeNBgwAOeSgjca0L+jzz5nAFjL80khsKmRUKM/L/e63go09zxNnry9a0nvKL4i7p1+Oji9EVSAZvOv2BfvEz7b96nBiDtXJk="
   on:
     tags: true
     # all_branches is required to use tags
     all_branches: true
-    # Only publish if our main Ruby target builds
-    rvm: 2.3.1
+    # Only publish the build marked with "DEPLOY_TO_FORGE"
+    condition: "$DEPLOY_TO_FORGE = yes"
