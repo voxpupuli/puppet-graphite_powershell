@@ -19,20 +19,20 @@ matrix:
     env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" CHECK=test
   - rvm: 1.9.3
     env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" FUTURE_PARSER="yes" CHECK=test
-  - rvm: 2.1
+  - rvm: 2.1.9
     env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" CHECK=test
-  - rvm: 2.1
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
-  - rvm: 2.2
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
+  - rvm: 2.1.9
+    env: PUPPET_VERSION="~> 4.0" CHECK=test
+  - rvm: 2.2.5
+    env: PUPPET_VERSION="~> 4.0" CHECK=test
   - rvm: 2.3.1
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=build DEPLOY_TO_FORGE=yes
+    env: PUPPET_VERSION="~> 4.0" CHECK=build DEPLOY_TO_FORGE=yes
   - rvm: 2.3.1
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=rubocop
+    env: PUPPET_VERSION="~> 4.0" CHECK=rubocop
   - rvm: 2.3.1
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
+    env: PUPPET_VERSION="~> 4.0" CHECK=test
   - rvm: 2.4.0-preview1
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
+    env: PUPPET_VERSION="~> 4.0" CHECK=test
   allow_failures:
     - rvm: 2.4.0-preview1
 notifications:
@@ -43,7 +43,7 @@ deploy:
     branch: ha-bug-puppet-forge
   user: puppet
   password:
-    secure: "kgLMkE7MzGeJMGNvKPqK9xIwVvZN67/FojIaIUVAGawtZ2qNpzbMv/cA905fLojZ9pJ4t+A/l7lfeNBgwAOeSgjca0L+jzz5nAFjL80khsKmRUKM/L/e63go09zxNnry9a0nvKL4i7p1+Oji9EVSAZvOv2BfvEz7b96nBiDtXJk="
+    secure: ""
   on:
     tags: true
     # all_branches is required to use tags
