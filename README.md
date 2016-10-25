@@ -1,34 +1,35 @@
-####Table of Contents
+# Graphite PowerShell module for Puppet
+
+#### Table of Contents
 
 1. [Overview](#overview)
 2. [Module Description - What the module does and why it is useful](#module-description)
 3. [Setup - The basics of getting started with graphite_powershell](#setup)
     * [What graphite_powershell affects](#what-graphite_powershell-affects)
-    * [Setup requirements](#setup-requirements)
     * [Beginning with graphite_powershell](#beginning-with-graphite_powershell)
 4. [Usage - Configuration options and additional functionality](#usage)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
 6. [Development - Guide for contributing to the module](#development)
 
-##Overview
+## Overview
 
 Module to send metrics to graphite from windows
 
 [![Build Status](https://travis-ci.org/opentable/puppet-graphite_powershell.png?branch=master)](https://travis-ci.org/opentable/puppet-graphite_powershell)
 
-##Module Description
+## Module Description
 
 Installs a windows service that reports system metrics to graphite
 
-##Setup
+## Setup
 
-###What graphite_powershell affects
+### What graphite_powershell affects
 
 * Powershell file and xml config file
 * windows service
 
-###Beginning with graphite_powershell
+### Beginning with graphite_powershell
 
 Install with defaults:
 
@@ -54,53 +55,64 @@ Install and just send network counters:
   }
 ```
 
-##Usage
+## Usage
 
-##Usage
+### Classes and Defined Types
 
-###Classes and Defined Types
+#### Class: `graphite_powershell`
 
-####Class: `graphite_powershell`
+**Parameters within `graphite_powershell`:**
 
-**Parameters within `graphite_powersehll`:**
+##### `server`
 
-#####`server`
 The graphite server in which to send the configured metrics
 
-#####`install_url`
+##### `install_url`
+
 The url from which to download the graphite powershell script
 
-#####`install_dir`
+##### `install_dir`
+
 The location in which to install the graphite powershell script
 
-#####`port`
+##### `port`
+
 The port that the graphite server is running on.
 
-#####`metric_path`
+##### `metric_path`
+
 The graphite namespece in which the stats will be sent to
 
-#####`metric_send_interval`
+##### `metric_send_interval`
+
 The time inveral (in seconds) in which to send metrics to the graphite server
 
-#####`timezone`
+##### `timezone`
+
 The timezone of your graphite server.
 
-#####`performance_counters`
+##### `performance_counters`
+
 A list of the performance counters that you want to be sent to graphite.
 
-#####`metric_filters`
+##### `metric_filters`
+
 A list of names you want to filter out of the performance counter list
 
-#####`verbose_logging`
+##### `verbose_logging`
+
 If enabled, will log each of the metrics that were sent to the graphite server.
 
-##Reference
+## Reference
 
-###Classes
-####Pulic Classes
-* [`graphite_powershell`](#class-graphite_powershell): Guides the install of graphite powershell and creates the windows service
+### Classes
 
-##Limitations
+#### Pulic Classes
+
+* [`graphite_powershell`](#class-graphite_powershell):
+  Guides the install of graphite powershell and creates the windows service
+
+## Limitations
 
 This module is tested on the following platforms:
 
@@ -111,6 +123,6 @@ This module is tested on the following platforms:
 
 It is tested with the OSS version of Puppet only.
 
-###Contributing
+### Contributing
 
 Please read CONTRIBUTING.md for full details on contributing to this project.
