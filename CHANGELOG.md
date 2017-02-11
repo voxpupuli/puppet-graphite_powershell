@@ -1,3 +1,12 @@
+# Changelog
+
+## 2017-02-11 - Release 2.1.0
+
+This is the last release with Puppet3 support!
+* Fix several markdown issues
+* Add missing badges
+* Add min version_requirement for Puppet + deps
+
 ## 2016-08-30 - Release 2.0.1
 
 * Deploy to the forge (last release didn't work)
