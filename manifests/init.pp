@@ -93,9 +93,9 @@ class graphite_powershell (
   validate_array($metric_filters)
   validate_bool($verbose_logging)
 
-  anchor { 'graphite_powershell::begin': } ->
-  class { '::graphite_powershell::config': } ->
-  class { '::graphite_powershell::install': } ->
-  class { '::graphite_powershell::service': } ->
-  anchor { 'graphite_powershell::end': }
+  anchor { 'graphite_powershell::begin': }
+  -> class { '::graphite_powershell::config': }
+  -> class { '::graphite_powershell::install': }
+  -> class { '::graphite_powershell::service': }
+  -> anchor { 'graphite_powershell::end': }
 }
