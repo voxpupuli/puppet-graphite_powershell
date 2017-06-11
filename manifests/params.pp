@@ -13,9 +13,9 @@ class graphite_powershell::params {
   $install_url = 'https://raw.githubusercontent.com/MattHodge/Graphite-PowerShell-Functions/master/Graphite-PowerShell.ps1'
   $install_dir = 'C:/GraphitePowershell'
 
-  $port = '2003'
+  $port = 2003
   $metric_path = 'performance.windows'
-  $metric_send_interval = '10'
+  $metric_send_interval = 10
   $timezone = 'UTC'
   $verbose_logging = true
 
