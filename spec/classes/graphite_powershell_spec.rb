@@ -6,7 +6,8 @@ describe 'graphite_powershell' do
       let :facts do
         facts.merge
       end
-      describe "graphite_powershell class without any parameters on #{osfamily}" do
+
+      describe "graphite_powershell class without any parameters on #{os}" do
         let(:params) do
           {
             server: 'localhost'
