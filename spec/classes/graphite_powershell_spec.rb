@@ -2,17 +2,15 @@ require 'spec_helper'
 
 describe 'graphite_powershell' do
   context 'supported operating systems' do
-    ['windows'].each do |osfamily|
-      describe "graphite_powershell class without any parameters on #{osfamily}" do
+    on_supported_os.each do |os, facts|
+      let :facts do
+        facts.merge
+      end
+
+      describe "graphite_powershell class without any parameters on #{os}" do
         let(:params) do
           {
             server: 'localhost'
-          }
-        end
-        let(:facts) do
-          {
-            osfamily: osfamily,
-            architecture: 'amd64'
           }
         end
 
@@ -27,25 +25,6 @@ describe 'graphite_powershell' do
 
         it { is_expected.to contain_file('C:/GraphitePowershell/StatsToGraphiteConfig.xml').with_ensure('present') }
       end
-    end
-  end
-
-  context 'unsupported operating system' do
-    describe 'graphite_powershell class without any parameters on Debian/Ubuntu' do
-      let(:params) do
-        {
-          server: 'localhost'
-        }
-      end
-      let(:facts) do
-        {
-          osfamily: 'Debian',
-          operatingsystem: 'Ubuntu',
-          architecture: 'amd64'
-        }
-      end
-
-      it { expect { is_expected.to contain_file('C:/GraphitePowershell/StatsToGraphiteConfig.xml') }.to raise_error(Puppet::Error, %r{Debian not supported}) }
     end
   end
 end
