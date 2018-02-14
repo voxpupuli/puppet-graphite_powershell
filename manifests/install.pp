@@ -25,6 +25,6 @@ class graphite_powershell::install {
     command   => "${graphite_powershell::params::powershell} -Command \"Start-Process -FilePath C:\\Program Files\\nssm.exe -ArgumentList \'install GraphitePowerShell \"${graphite_powershell::params::powershell}\" \"-command \"& { . ${graphite_powershell::install_dir}\\Graphite-PowerShell.ps1; Start-StatsToGraphite }\"\" \' -NoNewWindow -Wait\"",
     onlyif    => "${graphite_powershell::params::powershell} -Command \"if (Get-Service \\\"GraphitePowershell\\\" -ErrorAction SilentlyContinue) { exit 1 } else {exit 0 }\"",
     logoutput => true,
-    require   => File["${graphite_powershell::install_dir}\\Graphite-PowerShell.ps1"],
+    require   => File["${graphite_powershell::install_dir}/Graphite-PowerShell.ps1"],
   }
 }
