@@ -4,7 +4,7 @@ describe 'graphite_powershell' do
   context 'supported operating systems' do
     on_supported_os.each do |os, facts|
       let :facts do
-        facts.merge
+        facts
       end
 
       describe "graphite_powershell class without any parameters on #{os}" do
