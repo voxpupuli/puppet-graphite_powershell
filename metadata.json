@@ -1,6 +1,6 @@
 {
   "name": "puppet-graphite_powershell",
-  "version": "3.0.1",
+  "version": "3.0.2-rc0",
   "author": "Vox Pupuli",
   "license": "MIT",
   "summary": "Module to send system metrics to graphite from windows",
