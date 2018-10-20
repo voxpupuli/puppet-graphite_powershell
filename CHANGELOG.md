@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v3.0.2](https://github.com/voxpupuli/puppet-graphite_powershell/tree/v3.0.2) (2018-10-20)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-graphite_powershell/compare/v3.0.1...v3.0.2)
+
+**Merged pull requests:**
+
+- modulesync 2.2.0 and allow puppet 6.x [\#43](https://github.com/voxpupuli/puppet-graphite_powershell/pull/43) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v3.0.1](https://github.com/voxpupuli/puppet-graphite_powershell/tree/v3.0.1) (2018-09-06)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-graphite_powershell/compare/v3.0.0...v3.0.1)
