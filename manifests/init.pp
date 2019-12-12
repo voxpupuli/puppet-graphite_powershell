@@ -82,9 +82,11 @@ class graphite_powershell (
     fail("${facts['os']['family']} not supported")
   }
 
-  anchor { 'graphite_powershell::begin': }
-  -> class { 'graphite_powershell::config': }
-  -> class { 'graphite_powershell::install': }
-  -> class { 'graphite_powershell::service': }
-  -> anchor { 'graphite_powershell::end': }
+  contain graphite_powershell::config
+  contain graphite_powershell::install
+  contain graphite_powershell::service
+
+  Class['graphite_powershell::config']
+  -> Class['graphite_powershell::install']
+  -> Class['graphite_powershell::service']
 }
