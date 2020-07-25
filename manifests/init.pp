@@ -77,7 +77,6 @@ class graphite_powershell (
   Array $metric_filters                                   = $graphite_powershell::params::metric_filters,
   Boolean $verbose_logging                                = $graphite_powershell::params::verbose_logging
 ) inherits graphite_powershell::params {
-
   if $facts['os']['family'] != 'windows' {
     fail("${facts['os']['family']} not supported")
   }

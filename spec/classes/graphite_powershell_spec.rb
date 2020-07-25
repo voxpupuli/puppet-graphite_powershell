@@ -21,9 +21,9 @@ describe 'graphite_powershell' do
 
         it { is_expected.to contain_service('GraphitePowerShell').that_subscribes_to('File[C:/GraphitePowershell/StatsToGraphiteConfig.xml]') }
 
-        it { is_expected.to contain_file('C:/GraphitePowershell/Graphite-PowerShell.ps1').with_ensure('present') }
+        it { is_expected.to contain_file('C:/GraphitePowershell/Graphite-PowerShell.ps1').with_ensure('file') }
 
-        it { is_expected.to contain_file('C:/GraphitePowershell/StatsToGraphiteConfig.xml').with_ensure('present') }
+        it { is_expected.to contain_file('C:/GraphitePowershell/StatsToGraphiteConfig.xml').with_ensure('file') }
       end
     end
   end
