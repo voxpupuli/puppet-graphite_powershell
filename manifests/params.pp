@@ -36,5 +36,5 @@ class graphite_powershell::params {
     '\PhysicalDisk(*)\Avg. Disk Read Queue Length',
   ]
 
-  $metric_filters = [ 'isatap', 'teredo tunneling' ]
+  $metric_filters = ['isatap', 'teredo tunneling']
 }

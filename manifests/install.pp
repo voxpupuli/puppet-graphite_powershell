@@ -8,14 +8,13 @@
 # It downloads the package and installs it.
 #
 class graphite_powershell::install {
-
   download_file { 'graphite_ps-install':
     url                   => $graphite_powershell::install_url,
     destination_directory => $graphite_powershell::install_dir,
   }
 
   file { "${graphite_powershell::install_dir}/Graphite-PowerShell.ps1":
-    ensure  => present,
+    ensure  => file,
     owner   => 'SYSTEM',
     notify  => Service['GraphitePowerShell'],
     require => Download_file['graphite_ps-install'],

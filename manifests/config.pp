@@ -8,9 +8,8 @@
 # It manages the graphite stats config files
 #
 class graphite_powershell::config {
-
   file { "${graphite_powershell::params::install_dir}/StatsToGraphiteConfig.xml":
-    ensure  => present,
+    ensure  => file,
     owner   => 'SYSTEM',
     content => template('graphite_powershell/StatsToGraphiteConfig.xml.erb'),
     notify  => Service['GraphitePowerShell'],
