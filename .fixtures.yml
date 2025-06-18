@@ -1,4 +1,5 @@
+---
 fixtures:
   repositories:
-    stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
-    download_file: "https://github.com/opentable/puppet-download_file.git"
+    download_file: https://github.com/opentable/puppet-download_file.git
+    stdlib: https://github.com/puppetlabs/puppetlabs-stdlib.git
