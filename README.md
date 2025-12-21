@@ -1,6 +1,6 @@
 # Graphite PowerShell module for Puppet
 
-[![Build Status](https://travis-ci.org/voxpupuli/puppet-graphite_powershell.png?branch=master)](https://travis-ci.org/voxpupuli/puppet-graphite_powershell)
+![Build Status](https://github.com/voxpupuli/puppet-graphite_powershell/actions/workflows/ci.yml/badge.svg?branch=master)
 [![Code Coverage](https://coveralls.io/repos/github/voxpupuli/puppet-graphite_powershell/badge.svg?branch=master)](https://coveralls.io/github/voxpupuli/puppet-graphite_powershell)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/puppet/graphite_powershell.svg)](https://forge.puppetlabs.com/puppet/graphite_powershell)
 [![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/puppet/graphite_powershell.svg)](https://forge.puppetlabs.com/puppet/graphite_powershell)
