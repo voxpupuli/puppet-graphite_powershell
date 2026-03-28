@@ -10,7 +10,7 @@ describe 'graphite_powershell' do
       describe "graphite_powershell class without any parameters on #{os}" do
         let(:params) do
           {
-            server: 'localhost'
+            server: 'localhost',
           }
         end
 
